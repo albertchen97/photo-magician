@@ -38,9 +38,9 @@ int main()
 		cout<<"Enter the file folder name that you want to process (image1 or image2): ";
 		string folderName;
 		cin>>folderName;
-		//string str = "cd " + folderName + " && ls *.ppm > ../fileNameLog && cd ..";
-		//const char* command = str.c_str();
-		//system(command);//get file name into fileNames, and go back to project directory
+		string str = "cd " + folderName + " && ls *.ppm > ../fileNameLog && cd ..";
+		const char* command = str.c_str();
+		system(command);//get file name into fileNames, and go back to project directory
 		ifstream fileNameReader("fileNameLog");
 		while(getline(fileNameReader,fileName))
 			fileVector.push_back(fileName);//push file names into files vector	
