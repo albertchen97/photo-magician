@@ -13,6 +13,9 @@ public:
 	void pop();//remove the max element in this heap
 	int top();//gets the max element in this heap
 	int size();//return the size of this heap
+
+	// below are sum experimental features
+	int sum();//return the sum of the heap (just for getting the average)
 private:
 	void fix_heap();//when the tree no follows the heap condition, reheap it
 	int get_left_child_index(int);//receives a index of a node, returns the index of the left child of the given node

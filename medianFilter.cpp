@@ -13,6 +13,7 @@ void medianFilter(vector<vector<int>>pixel_with_same_index,vector<int>pixel_of_e
 {
 	cout<<"Median Filter is working..."<<endl;
 	vector<int>medianVector;
+	int median = 0;
 	for(int i=0;i<size;i++)
 	{
 		//push pixel_with_same_index into heap to calculate the median
@@ -31,16 +32,18 @@ void medianFilter(vector<vector<int>>pixel_with_same_index,vector<int>pixel_of_e
 			min.pop();
 			max.pop();
 		}
-		if(min.top()==max.top())
-		{
-			int median = min.top();
-			medianVector.push_back(median);
-		}
-		else
-		{
-			cout<<"Data error!"<<endl;
-			i=pixel_of_each_file.size();//end the loop
-		}
+		median = min.top();
+		// if(min.top()==max.top())
+		// {
+		// 	int median = min.top();
+		// 		medianVector.push_back(median);
+		// }
+		// else
+		// {
+		// 	cout<<"Data error!"<<endl;
+		// 	i=pixel_of_each_file.size();//end the loop
+		// }
+		medianVector.push_back(median);
 	}
 	cout<<"All images has been processed!"<<endl;
 	//pass the medianVector to writeImage to get the result image

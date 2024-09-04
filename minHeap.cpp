@@ -1,5 +1,6 @@
 //minHeap member function definition
 #include "minHeap.h"
+#include <numeric>
 MinHeap::MinHeap()
 {
 	int dummy;//"dummy" holds nothing, only to fill up the index 0
@@ -113,7 +114,10 @@ int MinHeap::get_parent(int index)
 }
 
 		
-	
+int MinHeap::sum()
+{
+	return std::accumulate(elements.begin(), elements.end(), 0);
+}	
 	
 		
 				
